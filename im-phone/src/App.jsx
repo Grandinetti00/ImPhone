@@ -7,7 +7,7 @@ function App() {
       <div>
         <img src="/logo.png" className="logo"/>
       </div>
-      <h1>I('m)Phone</h1>
+      <h1>I ('m) Phone</h1>
       <div className="subtitulo">
         <p>
           CHOOSE YOUR NEW INPHONE
