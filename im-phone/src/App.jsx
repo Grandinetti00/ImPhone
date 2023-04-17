@@ -1,19 +1,19 @@
 import './App.css'
+import Navbar from './components/navbar/navbar.jsx'
 
 function App() {
 
   return (
-    <div className="App">
-      <div>
-        <img src="/logo.png" className="logo"/>
+    <header>
+      <div className="App">
+        <Navbar />
+        <h1>I ('m) Phone</h1>
+        <div className='div_app'>
+          <p>CHOOSE YOUR NEW INPHONE</p>
+        </div>
       </div>
-      <h1>I ('m) Phone</h1>
-      <div className="subtitulo">
-        <p>
-          CHOOSE YOUR NEW INPHONE
-        </p>
-      </div>
-    </div>
+    </header>
+
   )
 }
 
