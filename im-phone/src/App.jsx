@@ -7,10 +7,6 @@ function App() {
     <header>
       <div className="App">
         <Navbar />
-        <h1>I ('m) Phone</h1>
-        <div className='div_app'>
-          <p>CHOOSE YOUR NEW INPHONE</p>
-        </div>
       </div>
     </header>
 

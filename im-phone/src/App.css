@@ -1,12 +1,8 @@
 #root {
   margin: 0 auto;
-  padding: 0 auto;
+  padding: 2rem;
 }
-
 .App {
   color: silver;
   text-align: center;
-}
-.div_app{
-  color: silver;
 }
