@@ -1,0 +1,17 @@
+body {
+    margin: 0;
+    background-color: whitesmoke;
+  }
+.slogan{
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.parametro{
+  font-size: 10px;
+  color:lightskyblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
