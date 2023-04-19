@@ -8,7 +8,7 @@ function App() {
     <header>
       <div className="App">
         <Navbar />
-        <ItemListContainer message={"comming soon"}/>
+        <ItemListContainer message={"coming soon"}/>
       </div>
     </header>
   )
