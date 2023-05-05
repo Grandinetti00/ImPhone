@@ -1,17 +1,36 @@
 import './ItemListContainer.css'
+import { useState } from 'react';
+import { useEffect } from 'react';
+import getData from '../helpers/getData';
+import ItemList from '../itemList/itemList';
 
-function ItemListContainer({ message }) {
+export const ItemListContainer = ({ dataCel }) => {
+
+    const [product, setProducrt] = useState ([])
+    const [loading, setLoading] = useState (true)
+    console.log(product)
+    
+    useEffect (() => {
+        setLoading(true)
+        getData()
+            .then((res) => {
+                setProducrt(res)
+            })
+            .catch((error) => {
+                console.log(error)
+            })
+            .finally(() => {
+                setLoading(false)
+            })
+    },[])
 
     return (
-        <body className="header">
-            <div className="slogan">
-                <p>CHOOSE THE MODEL OF YOUR FUTURE</p>
-            </div>
-            <div className="parametro">
-                <p>{message}</p>
-            </div>
-        </body>
+        <div className="">
+            {
+                loading
+                    ? <h2>LOADING</h2>
+                    : <ItemList items={product} />
+            }
+        </div>
     )
-}
-
-export default ItemListContainer
+};

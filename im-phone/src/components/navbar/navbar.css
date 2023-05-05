@@ -1,22 +1,21 @@
+
 .header {
     background-color: whitesmoke;
 }
-.header_p{
-    font-size: 30px;
+.header_div {
+    display: flex;
+    justify-content:space-between;
+}
+.header_logo{
+    font-size: 60px;
     display: flex;
     justify-content: center;
-    align-items: center;
-}
-.header_div {
-    margin: 0 auto;
-    display: flex;
-    justify-content:center;
-    gap: 50px
+    margin-left: 20px;
+    
 }
 .logo {
-    width: 95px;
+    width: 70px;
 }
-
 .navbar {
     display: flex;
     justify-content: center;
@@ -25,12 +24,10 @@
     text-decoration: none;
     font-size: 20px;
     cursor: pointer;
-
 }
 .navLink{
     color: silver;
 }
-
 .navLink:hover {
       color: lightskyblue;
       transition: all .3s;

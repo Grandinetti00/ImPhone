@@ -7,10 +7,9 @@ function Navbar() {
     return (
         <header className="header">
             <div className="header_div">
-                <p className='header_p'>I<img className="logo" src={logo} alt='logo' />PHONE</p>
+                <p className='header_logo'>I<img className="logo" src={logo} alt='logo' />PHONE</p>
                 <nav className="navbar">
                     <p className="navLink">TO BUY</p>
-                    <p className="navLink">TO SELL</p>
                     <p className="navLink">CONTACT US</p>
                     <CartWidget />
                 </nav>

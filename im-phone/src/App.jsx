@@ -1,6 +1,7 @@
 import './App.css'
-import Navbar from './components/navbar/navbar.jsx'
-import ItemListContainer from './components/ItemListContainer/ItemListContainer'
+import Navbar from './components/navbar/navbar'
+import {ItemListContainer} from './components/ItemListContainer/ItemListContainer'
+import {Footer} from './components/footer/footer'
 
 function App() {
 
@@ -8,10 +9,10 @@ function App() {
     <header>
       <div className="App">
         <Navbar />
-        <ItemListContainer message={"coming soon"}/>
+        <ItemListContainer/>
+        <Footer />
       </div>
     </header>
   )
 }
-
 export default App

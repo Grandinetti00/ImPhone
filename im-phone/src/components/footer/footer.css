@@ -1,0 +1,18 @@
+footer {
+    background-color: whitesmoke;
+    padding: 15px;
+}
+footer p {
+    color: black;
+    font-size: 15px;
+    text-align:center
+}  
+
+.footer__ig {
+    width: 50px;
+    margin-right: 5px;
+}
+.footer__wpp {
+    width: 50px;
+    margin-left: 5px;
+}
