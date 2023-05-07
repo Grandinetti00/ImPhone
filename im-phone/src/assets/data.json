@@ -1,0 +1,66 @@
+[
+    {
+        "id": 1,
+        "name": "iPhone X",
+        "gb": 128,
+        "color": "Blue",
+        "price": 380,
+        "picture": "../../public/img/iphoneX.png"
+    },
+    {
+        "id": 2,
+        "name": "iPhone XR",
+        "gb": 64,
+        "color": "Red",
+        "price": 259,
+        "picture": "../../public/img/iphoneXR.png"
+    },
+    {
+        "id": 3,
+        "name": "iPhone XS MAX",
+        "gb": 64,
+        "color": "Space Gray",
+        "price": 411,
+        "picture": "../../public/img/iphoneXS.png"
+    },
+    {
+        "id": 4,
+        "name": "iPhone 11 PRO",
+        "gb": 512,
+        "color": "Gold",
+        "price": 520,
+        "picture": "../../public/img/iphone11.png"
+    },
+    {
+        "id": 5,
+        "name": "iPhone 12",
+        "gb": 256,
+        "color": "Black",
+        "price": 580,
+        "picture": "../../public/img/iphone12.png"
+    },
+    {
+        "id": 6,
+        "name": "iPhone 12",
+        "gb": 64,
+        "color": "Green",
+        "price": 636,
+        "picture": "../../public/img/iphone12green.png"
+    },
+    {
+        "id": 7,
+        "name": "iPhone X",
+        "gb": 512,
+        "color": "Black",
+        "price": 420,
+        "picture": "../../public/img/iphoneXn.png"
+    },
+    {
+        "id": 8,
+        "name": "iPhone 11",
+        "gb": 128,
+        "color": "Black",
+        "price": 470,
+        "picture": "../../public/img/iphone11black.png"
+    }  
+]

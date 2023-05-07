@@ -1,34 +1,17 @@
 import './ItemListContainer.css'
-import { useState } from 'react';
-import { useEffect } from 'react';
-import getData from '../helpers/getData';
 import ItemList from '../itemList/itemList';
+import sticker from '../../assets/img/sticker.webp'
+import {useProductos}  from '../hooks/useProductos';
 
-export const ItemListContainer = ({ dataCel }) => {
+export const ItemListContainer = () => {
 
-    const [product, setProducrt] = useState ([])
-    const [loading, setLoading] = useState (true)
-    console.log(product)
-    
-    useEffect (() => {
-        setLoading(true)
-        getData()
-            .then((res) => {
-                setProducrt(res)
-            })
-            .catch((error) => {
-                console.log(error)
-            })
-            .finally(() => {
-                setLoading(false)
-            })
-    },[])
+    const {loading, product} = useProductos()
 
     return (
         <div className="">
             {
                 loading
-                    ? <h2>LOADING</h2>
+                    ? <img className='loading' src={sticker} alt='loading' />
                     : <ItemList items={product} />
             }
         </div>

@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    width: 100%;
+    margin: 50px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title{
+    cursor: pointer;
+    color: gray;
+}
+
+.title:hover {
+    color: lightskyblue;
+    transition: all .3s;
+}
+
+.section {
+margin: 10px;
+}
+.img {
+    width: 250px;
+}   

@@ -1,5 +1,6 @@
 
 .header {
+    margin: 30px 50px 0px 50px;
     background-color: whitesmoke;
 }
 .header_div {
@@ -16,6 +17,13 @@
 .logo {
     width: 70px;
 }
+
+.logo_slogan {
+    justify-content: center;
+    margin-left: 20px;
+    color: lightskyblue;
+}
+
 .navbar {
     display: flex;
     justify-content: center;

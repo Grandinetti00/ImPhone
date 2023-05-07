@@ -3,7 +3,7 @@ footer {
     padding: 15px;
 }
 footer p {
-    color: black;
+    color: gray;;
     font-size: 15px;
     text-align:center
 }  
@@ -11,7 +11,9 @@ footer p {
 .footer__ig {
     width: 50px;
     margin-right: 5px;
+    margin-top: 15px;
 }
+
 .footer__wpp {
     width: 50px;
     margin-left: 5px;
