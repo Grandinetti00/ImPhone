@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react"
-import getData from "../helpers/getData"
+import {getData} from "../helpers/getData"
 
 export const useProductos = () => {
     
-    const [product, setProducrt] = useState ([])
+    const [product, setProduct] = useState ([])
     const [loading, setLoading] = useState (true)
     console.log(product)
     
@@ -11,7 +11,7 @@ export const useProductos = () => {
         setLoading(true)
         getData()
             .then((res) => {
-                setProducrt(res)
+                setProduct(res)
             })
             .catch((error) => {
                 console.log(error)

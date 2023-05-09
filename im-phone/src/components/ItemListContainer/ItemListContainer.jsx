@@ -1,7 +1,7 @@
 import './ItemListContainer.css'
 import ItemList from '../itemList/itemList';
-import sticker from '../../assets/img/sticker.webp'
-import {useProductos}  from '../hooks/useProductos';
+import sticker from '../../assets/img/sticker.webp';
+import {useProductos} from '../../hooks/useProductos';
 
 export const ItemListContainer = () => {
 

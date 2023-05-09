@@ -12,8 +12,8 @@ function Navbar() {
                     <p className='logo_slogan'>choose the model of your future</p>
                 </section>
                 <nav className="navbar">
-                    <p className="navLink">TO BUY</p>
-                    <p className="navLink">CONTACT US</p>
+                    <a href='/' className="navLink">TO BUY</a>
+                    <a href='/contactUs' className="navLink">CONTACT US</a>
                     <CartWidget />
                 </nav>
             </div>
