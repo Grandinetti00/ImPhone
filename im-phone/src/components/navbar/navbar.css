@@ -39,6 +39,7 @@
 }
 .navLink{
     color: silver;
+    font-size: 1.4rem;
 }
 .navLink:hover {
       color: lightskyblue;

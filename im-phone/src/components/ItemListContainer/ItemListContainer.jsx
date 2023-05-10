@@ -8,7 +8,7 @@ export const ItemListContainer = () => {
     const {loading, product} = useProductos()
 
     return (
-        <div className="">
+        <div>
             {
                 loading
                     ? <img className='loading' src={sticker} alt='loading' />

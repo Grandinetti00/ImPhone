@@ -1,11 +1,22 @@
+import './itemCart.css'
+import cart from '../../assets/img/cart.png'
 
 export const ItemCart = ({ param }) => {
     console.log(param)
     return (
-        <div className="">
-            <h2>Hola mudo</h2>
-            <p>{param.name}</p>
-            <img src={param.picture} alt="" />
+        <div className='itemCart'>
+            <div className="cart">
+                <img className="cart_picture" src={param.picture} alt="Picture" />
+                <div className="cart_section">
+                    <p className="cart_title">{param.name}</p>
+                </div>
+                <div className='cart_description'>
+                    <p className="cart_price">${param.price}</p>
+                    {/* <p>{param.gb}GB</p>
+                    <p>{param.color}</p> */}
+                    <button className='cart_button'><img className="cartLogo" src={cart} alt="cart" /></button>
+                </div>
+            </div>
         </div>
     )
 };

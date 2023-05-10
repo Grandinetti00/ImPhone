@@ -1,15 +1,7 @@
-body {
+* {
     margin: 0;
     background-color: whitesmoke;
   }
-  
-.parametro{
-  font-size: 10px;
-  color:lightskyblue;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 .loading {
   margin: 200px;

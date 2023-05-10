@@ -4,6 +4,7 @@ import { ItemListContainer } from './components/ItemListContainer/ItemListContai
 import { Footer } from './components/footer/footer';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
+
 function App() {
 
   return (
@@ -13,7 +14,7 @@ function App() {
           <Navbar />
           <Routes>
             <Route path='/' element={<ItemListContainer/>} />
-            <Route path='/contactUs' element={''} />
+            <Route path='/item/:categoryId' element={<ItemListContainer/>} />
             <Route path='/cart' element={''} />
             <Route path='*' element={<Navigate to={'/'} />}/>
           </Routes>

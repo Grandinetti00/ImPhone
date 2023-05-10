@@ -15,7 +15,9 @@ export const getData = async () => {
                     name: item.name,
                     gb: item.gb,
                     color: item.color,
-                    price: item.price
+                    price: item.price,
+                    category: item.category,
+                    bateryHealth: item.bateryHealth
                 }
             )
         })
