@@ -1,17 +1,19 @@
 import './ItemListContainer.css'
+import ItemList from '../itemList/itemList';
+import sticker from '../../assets/img/sticker.webp';
+import {useProductos} from '../../hooks/useProductos';
 
-function ItemListContainer({ message }) {
+export const ItemListContainer = () => {
+
+    const {loading, product} = useProductos()
 
     return (
-        <body className="header">
-            <div className="slogan">
-                <p>CHOOSE THE MODEL OF YOUR FUTURE</p>
-            </div>
-            <div className="parametro">
-                <p>{message}</p>
-            </div>
-        </body>
+        <div>
+            {
+                loading
+                    ? <img className='loading' src={sticker} alt='loading' />
+                    : <ItemList items={product} />
+            }
+        </div>
     )
-}
-
-export default ItemListContainer
+};
