@@ -2,6 +2,7 @@ import './itemDetail';
 import cart from '../../assets/img/cart.png'
 
 const ItemDetail = ({param}) => {
+
     return (
 <div className='itemCart'>
             <div className="cart">
