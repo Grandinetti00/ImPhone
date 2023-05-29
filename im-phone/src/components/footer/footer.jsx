@@ -1,4 +1,4 @@
-import "../footer/footer.css"
+import "./footer.css"
 import ig from '../../assets/img/ig.png'
 import wpp from '../../assets/img/wpp.png'
 

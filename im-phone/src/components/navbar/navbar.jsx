@@ -2,6 +2,7 @@ import './navbar.css'
 import logo from '../../assets/img/logo.png'
 import CartWidget from '../cartwidget/CartWidget.jsx'
 import { Link } from 'react-router-dom';
+import Contact from '../contact/Contact';
 
 function Navbar() {
 
@@ -17,6 +18,8 @@ function Navbar() {
                     <Link to='/item/X' className="navLink">iPhone X</Link>
                     <Link to='/item/11' className="navLink">iPhone 11</Link>
                     <Link to='/item/12' className="navLink">iPhone 12</Link>
+                    <Link to='Contact' className="navLink">Contact Us</Link>
+
                     <CartWidget />
                 </nav>
             </div>
