@@ -1,4 +1,4 @@
-import './itemDetail';
+import './itemDetail.css';
 import cart from '../../assets/img/cart.png'
 
 const ItemDetail = ({param}) => {
