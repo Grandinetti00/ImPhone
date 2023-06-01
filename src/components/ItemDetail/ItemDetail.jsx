@@ -1,5 +1,5 @@
 import './itemDetail.css';
-import cart from '../../assets/img/cart.png'
+import ItemAdd from "../ItemAdd/itemAdd"
 
 const ItemDetail = ({param}) => {
 
@@ -8,14 +8,14 @@ const ItemDetail = ({param}) => {
             <div className="cart">
                 <img className="cart_picture" src={param.picture} alt="Picture" />
                 <div className="cart_section">
-                    <p className="cart_title">{param.name}</p>
+                    <p className="detailTitle">{param.name}</p>
                 </div>
                 <div className='cart_description'>
                     <p className="cart_price">${param.price}</p>
                     <p>{param.gb}GB</p>
                     <p>{param.color}</p>
                     <p>Batery Health: {param.bateryHealth}</p>
-                    <button className='cart_button'><img className="cartLogo" src={cart} alt="cart" /></button>
+                    <ItemAdd param={param}/>
                 </div>
             </div>
         </div>

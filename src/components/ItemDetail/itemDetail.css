@@ -11,8 +11,8 @@
     align-items:center;
 }
 .itemCart:hover{
-    transition: all .3s;
-    transform: translateY(-3%);
+    transition: none;
+    transform: none;
 }
 
 .itemCart .carts{
@@ -27,12 +27,13 @@
     padding: 20px;
 }
 
-.itemCart .carts .cart_title {
+.detailTitle {
     font-size: 1.8rem;
     font-weight: 700;
     padding-left: 20px;
     padding-right: 20px;
-    cursor: pointer;
+    color: lightblue;
+
 }
 
 .itemCart .carts .cart_description {
@@ -44,15 +45,4 @@
 .itemCart .carts .cart_price {
     font-size: 1.3rem;
     margin: 2px;
-}
-
-.itemCart .carts .cart_button{
-    border: none;
-    background-color: whitesmoke;
-    cursor: pointer;
-}
-
-.itemCart .carts .cart_button img{
-    width: 30px;
-    height: auto;
 }

@@ -4,6 +4,7 @@ import ItemDetail from "../ItemDetail/ItemDetail";
 import sticker from '../../assets/img/sticker.webp';
 import './itemDetailContainer.css';
 
+
 const ItemDetailContainer = () => {
     const {itemId} = useParams()
     const {loading, item} = useItem(itemId)
