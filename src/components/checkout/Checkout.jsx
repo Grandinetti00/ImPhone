@@ -78,9 +78,9 @@ export const Checkout = () => {
         )
     }
     
-    // if (Cart.length === 0) {
-    //     return <Navigate to='/' />
-    // }
+    if (cart.length === 0) {
+        return <Navigate to='/' />
+    }
 
     return (
         <div>
