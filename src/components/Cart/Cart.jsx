@@ -8,14 +8,14 @@ const Cart = () => {
 
     const { cart, emptyCart, totalPrice, removeItem } = useContext(CartContext)
 
-    if (cart.lenght === 0) {
-        return (
-            <div>
-                <h2 className='title'>YOUR CART IS EMPTY</h2>
-                <Link to="/">Our Products</Link>
-            </div>
-        )
-    }
+    // if (Cart.length === 0) {
+    //     return (
+    //         <div>
+    //             <h2 className='title'>YOUR CART IS EMPTY</h2>
+    //             <Link to="/" className='button'>Our Products</Link>
+    //         </div>
+    //     )
+    // }
     return (
         <div>
             <h2 className='title'>YOUR CART</h2>
@@ -40,6 +40,7 @@ const Cart = () => {
             <div className='toBuy'>
                 <h3><strong>TOTAL: ${totalPrice()}</strong></h3>
                 <button onClick={emptyCart} className='emptyButton'>Clean Cart</button>
+                <Link to="/checkout" className='button'>Buy</Link>
             </div>
         </div>
     )

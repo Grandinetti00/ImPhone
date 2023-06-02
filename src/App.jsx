@@ -7,7 +7,7 @@ import { Footer } from './components/footer/footer';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Contact from './components/contact/Contact'
 import { CartProvider } from './context/CartContext';
-
+import { Checkout } from './components/checkout/Checkout'
 
 
 function App() {
@@ -24,6 +24,7 @@ function App() {
               <Route path='/item/:categoryId' element={<ItemListContainer />} />
               <Route path='/detail/:itemId' element={<ItemDetailContainer />} />
               <Route path='/contact' element={<Contact />} />
+              <Route path='/checkout' element={<Checkout />} />
               <Route path='/cart' element={<Cart />} />
               <Route path='*' element={<Navigate to={'/'} />} />
             </Routes>

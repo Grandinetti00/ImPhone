@@ -6,7 +6,8 @@
         "gb": 128,
         "color": "Blue",
         "price": 380,
-        "bateryHealth": "93%"
+        "bateryHealth": "93%",
+        "stock": 1
     },
     {
         "id": 2,
@@ -15,7 +16,8 @@
         "gb": 64,
         "color": "Red",
         "price": 259,
-        "bateryHealth": "88%"
+        "bateryHealth": "88%",
+        "stock": 1
     },
     {
         "id": 3,
@@ -24,7 +26,8 @@
         "gb": 64,
         "color": "Space Gray",
         "price": 411,
-        "bateryHealth": "90%"
+        "bateryHealth": "90%",
+        "stock": 1
     },
     {
         "id": 4,
@@ -33,7 +36,8 @@
         "gb": 512,
         "color": "Gold",
         "price": 520,
-        "bateryHealth": "90%"
+        "bateryHealth": "90%",
+        "stock": 1
     },
     {
         "id": 5,
@@ -42,7 +46,8 @@
         "gb": 256,
         "color": "Black",
         "price": 580,
-        "bateryHealth": "93%"
+        "bateryHealth": "93%",
+        "stock": 1
     },
     {
         "id": 6,
@@ -51,7 +56,8 @@
         "gb": 64,
         "color": "Green",
         "price": 636,
-        "bateryHealth": "81%"
+        "bateryHealth": "81%",
+        "stock": 1
     },
     {
         "id": 7,
@@ -60,7 +66,8 @@
         "gb": 512,
         "color": "Black",
         "price": 420,
-        "bateryHealth": "75%"
+        "bateryHealth": "75%",
+        "stock": 1
     },
     {
         "id": 8,
@@ -69,6 +76,7 @@
         "gb": 128,
         "color": "Black",
         "price": 470,
-        "bateryHealth": "83%"
+        "bateryHealth": "83%",
+        "stock": 1
     }  
 ]
