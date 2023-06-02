@@ -1,14 +1,14 @@
 import { useContext, useState } from "react";
 import { Navigate } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
-import Cart from "../Cart/Cart";
 import {collection, addDoc, writeBatch, query, where, documentId, getDocs} from 'firebase/firestore'
 import {db} from '../../firebase/config'
+import { Link } from "react-router-dom";
 
 
 export const Checkout = () => {
 
-    const {cart, totalCart, totalPrice, emptyCart} = useContext(CartContext)
+    const {cart, totalPrice, emptyCart} = useContext(CartContext)
 
     const [values, setValues] = useState ({
         name: '',
@@ -27,11 +27,25 @@ export const Checkout = () => {
     }
 
     const handleSubmit = async (e) => {
-        e.preventDeffault() 
+        e.preventDeffault()
+
+        const {name, mail, address } = values
+        if (name.length < 5) {
+            alert("The name is invalid")
+            return
+        }
+        if (mail.length < 5) {
+            alert("The mail is invalid")
+            return
+        }
+        if (address.length < 8) {
+            alert("The address is invalid")
+            return
+        }
 
         const order = {
             client: values,
-            items: cart.map(param => ({id: param.id, name: param.name})),
+            items: cart.map(param => ({id: param.id, name: param.name, stock: param.stock})),
             total: totalPrice(),
             fyh: new Date(),
         }
@@ -77,7 +91,7 @@ export const Checkout = () => {
             </div>
         )
     }
-    
+
     if (cart.length === 0) {
         return <Navigate to='/' />
     }

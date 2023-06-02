@@ -19,11 +19,11 @@ const Cart = () => {
     return (
         <div>
             <h2 className='title'>YOUR CART</h2>
-
+            <div className='divCart'>
             {
                 cart.map((param) => (
                     <div className="cartContent" key={param.id}>
-                        <div>
+                        <div className='cartContent_container'>
                             <img className="cart_picture" src={param.picture} alt="Picture" />
                             <div className="cart_section">
                                 <p className="detailTitle">{param.name}</p>
@@ -33,10 +33,10 @@ const Cart = () => {
                             </div>
                             <button onClick={() => removeItem(param.id)} className='emptyButton'>Remove</button>
                         </div>
-
                     </div>
                 ))
             }
+            </div>
             <div className='toBuy'>
                 <h3><strong>TOTAL: ${totalPrice()}</strong></h3>
                 <button onClick={emptyCart} className='emptyButton'>Clean Cart</button>

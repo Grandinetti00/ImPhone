@@ -1,4 +1,8 @@
-
+.divCart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .title {
     margin-top: 50px;
     margin-bottom: 15px;
@@ -6,9 +10,13 @@
 }
 
 .cartContent {
-    display: flex;
     align-items: center;
-    justify-content:space-around;
+    justify-content:center;
+}
+
+.cartContent .cartContent_container {
+    align-items: center;
+    justify-content:center;
 }
 
 .emptyButton {
