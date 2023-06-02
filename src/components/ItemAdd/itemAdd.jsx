@@ -1,14 +1,11 @@
 import './itemAdd.css';
 
-const ItemAdd = (param) => {
-
-const handleAdd = () => {
-    console.log(param)
-}
+const ItemAdd = ({addCart}) => {
+console.log(addCart)
 
 return (
     <div>
-        <button onClick={handleAdd}>Add to Cart</button>
+        <button onClick={addCart}>Add to Cart</button>
     </div>
 )
 }

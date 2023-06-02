@@ -46,3 +46,15 @@
     font-size: 1.3rem;
     margin: 2px;
 }
+
+.button {
+    background-color: lightblue;
+    border: none;
+    border-radius: 6px;
+    color: whitesmoke;
+    padding: 5px;
+    font-style: none;
+}
+.button:hover {
+    background-color: lightskyblue;
+}

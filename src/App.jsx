@@ -5,15 +5,16 @@ import ItemDetailContainer from './components/iItemDetailContainer/iItemDetailCo
 import Cart from './components/Cart/Cart';
 import { Footer } from './components/footer/footer';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import { CartProvider } from './context/CartContext';
 import Contact from './components/contact/Contact'
+import { CartProvider } from './context/CartContext';
+
 
 
 function App() {
+
+
   return (
-
     <CartProvider>
-
       <BrowserRouter>
         <header>
           <div className="App">
@@ -30,9 +31,7 @@ function App() {
           </div>
         </header>
       </BrowserRouter>
-
     </CartProvider>
-
   )
 }
 export default App

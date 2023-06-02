@@ -1,0 +1,25 @@
+
+.title {
+    margin-top: 50px;
+    margin-bottom: 15px;
+    font-size: 30px;
+}
+
+.cartContent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    flex-wrap: wrap;
+}
+
+.emptyButton {
+    background-color: lightpink;
+}
+.emptyButton:hover{
+    background-color: lightcoral;
+}
+
+.toBuy {
+    margin-top: 80px; 
+}
