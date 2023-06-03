@@ -13,7 +13,6 @@ export const ItemCart = ({ param }) => {
                 </div>
                 <div className='cart_description'>
                     <p className="cart_price">${param.price}</p>
-                    <button className='cart_button'><img className="cartLogo" src={cart} alt="cart" /></button>
                 </div>
             </div>
         </div>

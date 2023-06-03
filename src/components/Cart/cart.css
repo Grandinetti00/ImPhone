@@ -1,0 +1,31 @@
+.divCart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.title {
+    margin-top: 50px;
+    margin-bottom: 15px;
+    font-size: 30px;
+}
+
+.cartContent {
+    align-items: center;
+    justify-content:center;
+}
+
+.cartContent .cartContent_container {
+    align-items: center;
+    justify-content:center;
+}
+
+.emptyButton {
+    background-color: lightpink;
+}
+.emptyButton:hover{
+    background-color: lightcoral;
+}
+
+.toBuy {
+    margin-top: 80px; 
+}

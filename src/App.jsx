@@ -6,14 +6,14 @@ import Cart from './components/Cart/Cart';
 import { Footer } from './components/footer/footer';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { CartProvider } from './context/CartContext';
-import Contact from './components/contact/Contact'
+import { Checkout } from './components/checkout/Checkout'
 
 
 function App() {
+
+
   return (
-
     <CartProvider>
-
       <BrowserRouter>
         <header>
           <div className="App">
@@ -22,7 +22,7 @@ function App() {
               <Route path='/' element={<ItemListContainer />} />
               <Route path='/item/:categoryId' element={<ItemListContainer />} />
               <Route path='/detail/:itemId' element={<ItemDetailContainer />} />
-              <Route path='/contact' element={<Contact />} />
+              <Route path='/checkout' element={<Checkout />} />
               <Route path='/cart' element={<Cart />} />
               <Route path='*' element={<Navigate to={'/'} />} />
             </Routes>
@@ -30,9 +30,7 @@ function App() {
           </div>
         </header>
       </BrowserRouter>
-
     </CartProvider>
-
   )
 }
 export default App

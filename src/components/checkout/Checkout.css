@@ -35,3 +35,16 @@
     border-top-style: none;
     border-right-style: none;
 }
+
+.wellDone {
+    margin: 100px;
+}
+.wellDone p{
+    font-size: 20px;
+}
+
+.wellDone .id{
+    margin-bottom: 20px;
+    color: lightskyblue;
+
+}

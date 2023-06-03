@@ -45,14 +45,3 @@
     font-size: 1.3rem;
     margin: 2px;
 }
-
-.cart_button{
-    border: none;
-    background-color: whitesmoke;
-    cursor: pointer;
-}
-
-.cart_button img{
-    width: 30px;
-    height: auto;
-}
