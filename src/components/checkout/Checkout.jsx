@@ -1,9 +1,9 @@
-import { useContext, useState } from "react";
-import { Navigate } from "react-router-dom";
+import { useContext, useState, useEffect } from "react";
+import Swal from 'sweetalert2';
+import { Navigate, Link  } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
 import {collection, addDoc, writeBatch, query, where, documentId, getDocs} from 'firebase/firestore'
 import {db} from '../../firebase/config'
-import { Link } from "react-router-dom";
 
 
 export const Checkout = () => {
@@ -18,8 +18,13 @@ export const Checkout = () => {
 
     const [orderId, setOrderId] = useState(null)
 
-    const handleInput = (e) => {
+    // useEffect(()=> {
+    //     condition();
+    // },[])
 
+
+
+    const handleInput = (e) => {
         setValues({
             ...values,
             [e.target.name]: e.target.value
@@ -27,42 +32,36 @@ export const Checkout = () => {
     }
 
     const handleSubmit = async (e) => {
-        e.preventDeffault()
+        e.preventDefault()
+        // condition()
 
-        const {name, mail, address } = values
-        if (name.length < 5) {
-            alert("The name is invalid")
-            return
-        }
-        if (mail.length < 5) {
-            alert("The mail is invalid")
-            return
-        }
-        if (address.length < 8) {
-            alert("The address is invalid")
-            return
-        }
-
-        const order = {
+        const order = {    
             client: values,
             items: cart.map(param => ({id: param.id, name: param.name, stock: param.stock})),
             total: totalPrice(),
             fyh: new Date(),
         }
+        console.log(order)
 
         const batch = writeBatch(db)
         const productsref = collection(db, "products")
-
         const ordersRef = collection(db, "orders")
-        const q = query(productsref, where( documentId(), "in", cart.map(param => param.id)))
         const outofStock = []
+
+        const q = query(productsref, where( documentId(), "in", cart.map(param => param.id)))
         const items = await getDocs(q)
-        items.docs.forEach((el) => {
-            const item = cart.find((i) => i.id === doc.i)
-            const unit = doc.data().unit
-            if(unit >= param.stock) {
+        console.log(items)
+
+        items.docs.forEach((doc) => {
+            console.log(doc.id)
+            const item = cart.find((i) => i.id === doc.id)
+            console.log(item)
+            const unit = doc.data().stock
+            console.log(unit)
+            console.log(item.stock)
+            if(unit >= item.stock) {
                 batch.update(doc.ref, {
-                    unit: unit - param.stock
+                    unit: unit - item.stock
                 })
             } else {
                 outofStock.push(item)
@@ -76,6 +75,7 @@ export const Checkout = () => {
                 setOrderId(doc.id)
                 emptyCart()
             })
+
         } else {
             alert("No stock available")
         }
@@ -87,13 +87,14 @@ export const Checkout = () => {
                 <h2 className='title'>CHECKOUT</h2>
                 <p>WELL DONE!</p>
                 <p>Your order ID: <strong>{orderId}</strong></p>
+                <br/>
                 <Link className='button' to="/">Done</Link>
             </div>
         )
     }
 
     if (cart.length === 0) {
-        return <Navigate to='/' />
+        return <Navigate to={"/"}/>
     }
 
     return (
