@@ -28,7 +28,7 @@ const ItemDetail = ({ param }) => {
                 </div>
                 {
                     isInCart(param.id)
-                        ? <Link className="benjamin_button" to="/cart">Go to Cart</Link>
+                        ? <Link className="button" to="/cart">Go to Cart</Link>
                         : <ItemAdd addCart={handleAdd} />
                 }
             </div>
