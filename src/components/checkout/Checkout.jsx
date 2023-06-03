@@ -1,5 +1,4 @@
-import { useContext, useState, useEffect } from "react";
-import Swal from 'sweetalert2';
+import { useContext, useState} from "react";
 import { Navigate, Link } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
 import { collection, addDoc, writeBatch, query, where, documentId, getDocs } from 'firebase/firestore'
@@ -18,12 +17,6 @@ export const Checkout = () => {
 
     const [orderId, setOrderId] = useState(null)
 
-    // useEffect(()=> {
-    //     condition();
-    // },[])
-
-
-
     const handleInput = (e) => {
         setValues({
             ...values,
@@ -33,7 +26,20 @@ export const Checkout = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        // condition()
+
+        const { name, mail, address } = values
+        if (name.length < 5) {
+            alert("The name must have at least 5 characters.")
+            return
+        }
+        if (mail.length < 5) {
+            alert("The mail must have at least 5 characters.")
+            return
+        }
+        if (address.length < 8) {
+            alert("The address must have at least 8 characters.")
+            return
+        }
 
         const order = {
             client: values,
@@ -41,7 +47,6 @@ export const Checkout = () => {
             total: totalPrice(),
             fyh: new Date(),
         }
-        console.log(order)
 
         const batch = writeBatch(db)
         const productsref = collection(db, "products")
@@ -53,13 +58,17 @@ export const Checkout = () => {
 
         items.docs.forEach((doc) => {
             const item = cart.find((i) => i.id === doc.id)
+            console.log(item)
             const unit = doc.data().stock
-            if (unit >= item.stock) {
+            console.log(doc.data())
+            if (unit > 0) {
                 batch.update(doc.ref, {
                     stock: unit - item.stock
                 })
+                console.log("hay stock")
             } else {
                 outofStock.push(item)
+                console.log("no hay stock")
             }
         })
 
@@ -91,7 +100,7 @@ export const Checkout = () => {
         )
     }
 
-    if (cart.length === 0) {
+    if (cart.length == 0) {
         return <Navigate to={"/"} />
     }
 
