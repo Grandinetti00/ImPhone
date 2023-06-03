@@ -1,16 +1,16 @@
 import { useContext, useState, useEffect } from "react";
 import Swal from 'sweetalert2';
-import { Navigate, Link  } from "react-router-dom";
+import { Navigate, Link } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
-import {collection, addDoc, writeBatch, query, where, documentId, getDocs} from 'firebase/firestore'
-import {db} from '../../firebase/config'
-
+import { collection, addDoc, writeBatch, query, where, documentId, getDocs } from 'firebase/firestore'
+import { db } from '../../firebase/config'
+import "./Checkout.css"
 
 export const Checkout = () => {
 
-    const {cart, totalPrice, emptyCart} = useContext(CartContext)
+    const { cart, totalPrice, emptyCart } = useContext(CartContext)
 
-    const [values, setValues] = useState ({
+    const [values, setValues] = useState({
         name: '',
         mail: '',
         address: '',
@@ -35,9 +35,9 @@ export const Checkout = () => {
         e.preventDefault()
         // condition()
 
-        const order = {    
+        const order = {
             client: values,
-            items: cart.map(param => ({id: param.id, name: param.name, stock: param.stock})),
+            items: cart.map(param => ({ id: param.id, name: param.name, stock: param.stock })),
             total: totalPrice(),
             fyh: new Date(),
         }
@@ -48,33 +48,28 @@ export const Checkout = () => {
         const ordersRef = collection(db, "orders")
         const outofStock = []
 
-        const q = query(productsref, where( documentId(), "in", cart.map(param => param.id)))
+        const q = query(productsref, where(documentId(), "in", cart.map(param => param.id)))
         const items = await getDocs(q)
-        console.log(items)
 
         items.docs.forEach((doc) => {
-            console.log(doc.id)
             const item = cart.find((i) => i.id === doc.id)
-            console.log(item)
             const unit = doc.data().stock
-            console.log(unit)
-            console.log(item.stock)
-            if(unit >= item.stock) {
+            if (unit >= item.stock) {
                 batch.update(doc.ref, {
-                    unit: unit - item.stock
+                    stock: unit - item.stock
                 })
             } else {
                 outofStock.push(item)
             }
         })
-        
+
         if (outofStock.length === 0) {
             addDoc(ordersRef, order)
-            .then((doc) => {
-                batch.commit()
-                setOrderId(doc.id)
-                emptyCart()
-            })
+                .then((doc) => {
+                    batch.commit()
+                    setOrderId(doc.id)
+                    emptyCart()
+                })
 
         } else {
             alert("No stock available")
@@ -85,16 +80,19 @@ export const Checkout = () => {
         return (
             <div>
                 <h2 className='title'>CHECKOUT</h2>
-                <p>WELL DONE!</p>
-                <p>Your order ID: <strong>{orderId}</strong></p>
-                <br/>
-                <Link className='button' to="/">Done</Link>
+                <div className="wellDone">
+                    <p>WELL DONE!</p>
+                    <br />
+                    <p>Your order ID: <p className="id"><strong>{orderId}</strong></p></p>
+                    <Link className='button' to="/">Done</Link>
+                </div>
+
             </div>
         )
     }
 
     if (cart.length === 0) {
-        return <Navigate to={"/"}/>
+        return <Navigate to={"/"} />
     }
 
     return (
